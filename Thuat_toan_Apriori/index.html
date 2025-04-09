@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Apriori Algorithm Implementation</title>
+    <title>Triển khai thuật toán Apriori</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -11,7 +11,7 @@
       <h1>Thuật toán Apriori</h1>
 
       <div class="input-section">
-        <h2>Nhập giao dịch:</h2>
+        <h2>Nhập dữ liệu giao dịch:</h2>
         <p>Ví dụ:</p>
         <pre>
 A, B, C
@@ -20,33 +20,23 @@ A, B
 A, B, C, D
 B, C, D
         </pre>
-        <textarea id="transactions" rows="10" cols="50"></textarea><br /><br />
+        <textarea id="transactions" rows="10" cols="50" placeholder="Nhập từng dòng là một giao dịch, cách nhau bằng dấu phẩy..."></textarea><br /><br />
 
-        <label for="minSupport">Minimum Support (0 - 1):</label>
-        <input
-          type="number"
-          id="minSupport"
-          value="0.5"
-          min="0"
-          max="1"
-          step="0.01"
-        /><br /><br />
+        <div class="input-row">
+          <label for="minSupport">Ngưỡng hỗ trợ tối thiểu (0 - 1):</label>
+          <input type="number" id="minSupport" value="0.5" min="0" max="1" step="0.01" />
+        </div>
+        
+        <div class="input-row">
+          <label for="minConfidence">Ngưỡng độ tin cậy tối thiểu (0 - 1):</label>
+          <input type="number" id="minConfidence" value="0.7" min="0" max="1" step="0.01" />
+        </div>
 
-        <label for="minConfidence">Minimum Confidence (0 - 1):</label>
-        <input
-          type="number"
-          id="minConfidence"
-          value="0.7"
-          min="0"
-          max="1"
-          step="0.01"
-        /><br /><br />
-
-        <button onclick="runApriori()">Run Apriori Algorithm</button>
+        <button onclick="runApriori()">Chạy thuật toán Apriori</button>
       </div>
 
       <div class="output-section">
-        <h2>Tập phổ biến:</h2>
+        <h2>Các tập phổ biến:</h2>
         <table id="frequent-itemsets-table">
           <thead>
             <tr>
@@ -71,6 +61,6 @@ B, C, D
       </div>
     </div>
 
-    <script src="aptiori.js"></script>
+    <script src="apriori.js"></script>
   </body>
 </html>
